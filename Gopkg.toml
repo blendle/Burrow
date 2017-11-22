@@ -11,7 +11,7 @@
   version = "2.1"
 
 [[constraint]]
-  branch = "master"
+  branch = "burrow-1.0-RC"
   name = "github.com/linkedin/Burrow"
 
 [[constraint]]
