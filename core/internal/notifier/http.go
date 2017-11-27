@@ -129,6 +129,7 @@ func (module *HttpNotifier) Notify(status *protocol.ConsumerGroupStatus, eventId
 	var url string
 
 	if stateGood {
+		module.Log.Info("We received a close event state!")
 		tmpl = module.templateClose
 		method = module.methodClose
 		url = module.urlClose

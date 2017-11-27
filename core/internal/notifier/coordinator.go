@@ -486,6 +486,7 @@ func (nc *Coordinator) notifyModule(module Module, status *protocol.ConsumerGrou
 	// Closed incidents get sent regardless of the threshold for the module
 	moduleName := module.GetName()
 	if (!startTime.IsZero()) && (status.Status == protocol.StatusOK) && viper.GetBool("notifier."+moduleName+".send-close") {
+		nc.Log.Info("We need to send a close event!")
 		module.Notify(status, eventId, startTime, true)
 		cgroup.LastNotify[module.GetName()] = time.Time{}
 		return
